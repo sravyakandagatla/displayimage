@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <link href='font-awesome.css' rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="app.js"></script>
+    <!--<style>
+       html{
+           overflow:hidden;
+       }
+    </style>-->
+</head>
+
+<body>
+    <div ng-controller="checkBoxController">
+        <div>
+            <div ng-repeat="employee in employees" style="display: inline-block;padding: 5px;">
+                <div>
+                    <input id="{{employee.image}}" type="checkbox" value="{{employee.image}}" ng-model="employee.checked" ng-change="toggleSelection(employee.src)" />
+                    <label for="{{employee.image}}"></label>
+                    {{employee.image}}
+                </div>
+            </div>
+        </div>
+
+       
+            <div class="panel-primary">
+                <div ng-repeat="image in selection" class="{{styleClass}}">
+                    <img ng-src="{{image}}" style="width:{{width}}%; height:{{height}}%;" />
+                </div>
+            </div>
+        </div>
+</body>
+</html>
